@@ -1335,9 +1335,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				// Skip main target.
 				
-				
 				// Skip dead or fake dead target.
-				
 				
 				// Check if target is auto attackable.
 				// Check if target is within attack angle.

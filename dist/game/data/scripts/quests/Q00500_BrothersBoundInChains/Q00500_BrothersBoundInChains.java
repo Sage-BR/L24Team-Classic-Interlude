@@ -238,7 +238,6 @@ public class Q00500_BrothersBoundInChains extends Quest
 		}
 		final Attackable target = event.getTarget();
 		
-		
 		// Retail prohibitions.
 		if ((target == null) || ((target.getLevel() - player.getLevel()) < -6) || target.isRaid() || target.isRaidMinion())
 		{

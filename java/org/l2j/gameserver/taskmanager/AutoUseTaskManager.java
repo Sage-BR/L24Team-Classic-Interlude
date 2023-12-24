@@ -200,7 +200,6 @@ public class AutoUseTaskManager
 					{
 						// Fixes start area issue.
 						
-						
 						// Already casting.
 						// Player is teleporting.
 						if (isInPeaceZone || player.isCastingNow() || player.isTeleporting())

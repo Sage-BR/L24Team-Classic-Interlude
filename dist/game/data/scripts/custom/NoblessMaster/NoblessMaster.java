@@ -52,19 +52,29 @@ public class NoblessMaster extends AbstractNpcAI
 			{
 				if (player.isNoble())
 				{
+					return "1003000-1.htm";
+				}
+				if (!(getQuestItemsCount(player, Config.NOBLESS_COIN) >= Config.NOBLESS_COIN_COUNT))
+				{
+					player.sendMessage("You don't have enough of the required item: " + Config.NOBLESS_COIN);
+					player.sendMessage("You need at least: " + Config.NOBLESS_COIN_COUNT);
+					return "1003000-2.htm";
+				}
+				if (!(player.getLevel() >= Config.NOBLESS_MASTER_LEVEL_REQUIREMENT))
+				{
+					player.sendMessage("You are not yet at the level: " + Config.NOBLESS_MASTER_LEVEL_REQUIREMENT);
 					return "1003000-3.htm";
 				}
-				if (player.getInventory().getInventoryItemCount(57, 0) > 1) // 57 ID > 1 count
 				{
+					takeItems(player, Config.NOBLESS_COIN, Config.NOBLESS_COIN_COUNT);
 					if (Config.NOBLESS_MASTER_REWARD_TIARA)
 					{
 						giveItems(player, NOBLESS_TIARA, 1);
 					}
 					player.setNoble(true);
 					player.sendPacket(QuestSound.ITEMSOUND_QUEST_FINISH.getPacket());
-					return "1003000-1.htm";
+					return "1003000-4.htm";
 				}
-				return "1003000-2.htm";
 			}
 		}
 		

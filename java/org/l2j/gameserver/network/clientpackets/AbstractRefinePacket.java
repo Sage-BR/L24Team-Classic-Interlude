@@ -45,7 +45,6 @@ public abstract class AbstractRefinePacket implements ClientPacket
 	protected static boolean isValid(Player player, Item item, Item mineralItem, Item feeItem, VariationFee fee)
 	{
 		
-		
 		// GemStones must belong to owner
 		// .. and located in inventory
 		if ((fee == null) || !isValid(player, item, mineralItem) || (feeItem.getOwnerId() != player.getObjectId()) || (feeItem.getItemLocation() != ItemLocation.INVENTORY))
@@ -77,7 +76,6 @@ public abstract class AbstractRefinePacket implements ClientPacket
 	protected static boolean isValid(Player player, Item item, Item mineralItem)
 	{
 		
-		
 		// Item must belong to owner
 		// Lifestone must be located in inventory
 		if (!isValid(player, item) || (mineralItem.getOwnerId() != player.getObjectId()) || (mineralItem.getItemLocation() != ItemLocation.INVENTORY))
@@ -96,7 +94,6 @@ public abstract class AbstractRefinePacket implements ClientPacket
 	 */
 	protected static boolean isValid(Player player, Item item)
 	{
-		
 		
 		// Item must belong to owner
 		if (!isValid(player) || (item.getOwnerId() != player.getObjectId()) || item.isAugmented() || item.isHeroItem())

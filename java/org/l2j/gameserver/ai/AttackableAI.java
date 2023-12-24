@@ -100,7 +100,6 @@ public class AttackableAI extends CreatureAI
 	private boolean isAggressiveTowards(Creature target)
 	{
 		
-		
 		// Check if the target isn't invulnerable
 		// Check if the target isn't a Folk or a Door
 		if ((target == null) || (getActiveChar() == null) || target.isInvul() || target.isDoor())
@@ -1032,7 +1031,6 @@ public class AttackableAI extends CreatureAI
 	
 	private boolean checkSkillTarget(Skill skill, WorldObject target)
 	{
-		
 		
 		// Check if target is valid and within cast range.
 		if ((target == null) || (skill.getTarget(getActiveChar(), target, false, getActiveChar().isMovementDisabled(), false) == null) || !Util.checkIfInRange(skill.getCastRange(), getActiveChar(), target, true))

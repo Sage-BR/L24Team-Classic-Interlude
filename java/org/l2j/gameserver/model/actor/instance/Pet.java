@@ -1010,7 +1010,6 @@ public class Pet extends Summon
 					
 					// Do not store those effects.
 					
-					
 					// Do not save heals.
 					// Toggles are skipped, unless they are necessary to be always on.
 					if (skill.isDeleteAbnormalOnLeave() || (skill.getAbnormalType() == AbnormalType.LIFE_FORCE_OTHERS) || (skill.isToggle() && !skill.isNecessaryToggle()))
