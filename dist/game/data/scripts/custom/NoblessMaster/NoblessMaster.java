@@ -56,7 +56,7 @@ public class NoblessMaster extends AbstractNpcAI
 				}
 				if (!(getQuestItemsCount(player, Config.NOBLESS_COIN) >= Config.NOBLESS_COIN_COUNT))
 				{
-					player.sendMessage("You don't have enough of the required item: " + Config.NOBLESS_COIN);
+					player.sendMessage("You don't have enough of the required item");
 					player.sendMessage("You need at least: " + Config.NOBLESS_COIN_COUNT);
 					return "1003000-2.htm";
 				}

@@ -97,9 +97,7 @@ public class AutoUseTaskManager
 					continue;
 				}
 				
-				final boolean isInPeaceZone = player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.SAYUNE);
-				
-				if (Config.ENABLE_AUTO_ITEM && !isInPeaceZone)
+				if (Config.ENABLE_AUTO_ITEM)
 				{
 					ITEMS: for (Integer itemId : player.getAutoUseSettings().getAutoSupplyItems())
 					{
@@ -159,7 +157,7 @@ public class AutoUseTaskManager
 					}
 				}
 				
-				if (Config.ENABLE_AUTO_POTION && !isInPeaceZone && (player.getCurrentHpPercent() < player.getAutoPlaySettings().getAutoPotionPercent()))
+				if (Config.ENABLE_AUTO_POTION && (player.getCurrentHpPercent() < player.getAutoPlaySettings().getAutoPotionPercent()))
 				{
 					final int itemId = player.getAutoUseSettings().getAutoPotionItem();
 					if (itemId > 0)
@@ -202,7 +200,7 @@ public class AutoUseTaskManager
 						
 						// Already casting.
 						// Player is teleporting.
-						if (isInPeaceZone || player.isCastingNow() || player.isTeleporting())
+						if (player.isCastingNow() || player.isTeleporting())
 						{
 							break BUFFS;
 						}
