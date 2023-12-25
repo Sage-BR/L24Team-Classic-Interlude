@@ -54,12 +54,7 @@ public class RingRange implements IAffectScopeHandler
 				return false;
 			}
 			
-			if ((affectObject != null) && !affectObject.checkAffectedObject(creature, c))
-			{
-				return false;
-			}
-			
-			if (!GeoEngine.getInstance().canSeeTarget(target, c))
+			if (((affectObject != null) && !affectObject.checkAffectedObject(creature, c)) || !GeoEngine.getInstance().canSeeTarget(target, c))
 			{
 				return false;
 			}

@@ -401,22 +401,11 @@ public class CreatureAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
-		{
-			// Cancel action client side by sending Server->Client packet ActionFailed to the Player actor
-			clientActionFailed();
-			return;
-		}
+		
 		
 		// Dead actors can`t follow
-		if (_actor.isDead())
-		{
-			clientActionFailed();
-			return;
-		}
-		
 		// do not follow yourself
-		if (_actor == target)
+		if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0) || _actor.isDead() || (_actor == target))
 		{
 			clientActionFailed();
 			return;

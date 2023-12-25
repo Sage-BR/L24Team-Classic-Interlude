@@ -79,13 +79,7 @@ public class TradeDone implements ClientPacket
 				return;
 			}
 			
-			if (player.getInstanceWorld() != trade.getPartner().getInstanceWorld())
-			{
-				player.cancelActiveTrade();
-				return;
-			}
-			
-			if (player.calculateDistance3D(trade.getPartner()) > 150)
+			if ((player.getInstanceWorld() != trade.getPartner().getInstanceWorld()) || (player.calculateDistance3D(trade.getPartner()) > 150))
 			{
 				player.cancelActiveTrade();
 				return;

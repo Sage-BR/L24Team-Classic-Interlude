@@ -87,12 +87,7 @@ public class TriggerSkillByMagicType extends AbstractEffect
 		}
 		
 		final Skill eventSkill = event.getSkill();
-		if (!CommonUtil.contains(_magicTypes, eventSkill.getMagicType()))
-		{
-			return;
-		}
-		
-		if ((_chance < 100) && (Rnd.get(100) > _chance))
+		if (!CommonUtil.contains(_magicTypes, eventSkill.getMagicType()) || ((_chance < 100) && (Rnd.get(100) > _chance)))
 		{
 			return;
 		}

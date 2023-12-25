@@ -1018,12 +1018,7 @@ public class Pet extends Summon
 					}
 					
 					// Dances and songs are not kept in retail.
-					if (skill.isDance() && !Config.ALT_STORE_DANCES)
-					{
-						continue;
-					}
-					
-					if (!storedSkills.add(skill.getReuseHashCode()))
+					if ((skill.isDance() && !Config.ALT_STORE_DANCES) || !storedSkills.add(skill.getReuseHashCode()))
 					{
 						continue;
 					}

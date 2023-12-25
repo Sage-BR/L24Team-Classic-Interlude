@@ -52,12 +52,7 @@ public class RequestRecipeShopMakeItem implements ClientPacket
 		}
 		
 		final Player manufacturer = World.getInstance().getPlayer(_id);
-		if (manufacturer == null)
-		{
-			return;
-		}
-		
-		if (manufacturer.getInstanceWorld() != player.getInstanceWorld())
+		if ((manufacturer == null) || (manufacturer.getInstanceWorld() != player.getInstanceWorld()))
 		{
 			return;
 		}

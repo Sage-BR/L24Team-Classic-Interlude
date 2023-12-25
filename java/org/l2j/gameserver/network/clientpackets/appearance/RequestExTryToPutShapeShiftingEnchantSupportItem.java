@@ -92,13 +92,7 @@ public class RequestExTryToPutShapeShiftingEnchantSupportItem implements ClientP
 			return;
 		}
 		final AppearanceStone appearanceStone = AppearanceItemData.getInstance().getStone(stone.getId());
-		if (appearanceStone == null)
-		{
-			player.removeRequest(ShapeShiftingItemRequest.class);
-			return;
-		}
-		
-		if ((appearanceStone.getType() == AppearanceType.RESTORE) || (appearanceStone.getType() == AppearanceType.FIXED))
+		if ((appearanceStone == null) || (appearanceStone.getType() == AppearanceType.RESTORE) || (appearanceStone.getType() == AppearanceType.FIXED))
 		{
 			player.removeRequest(ShapeShiftingItemRequest.class);
 			return;

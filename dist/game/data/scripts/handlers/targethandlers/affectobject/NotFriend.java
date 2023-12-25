@@ -74,13 +74,8 @@ public class NotFriend implements IAffectObjectHandler
 			}
 			
 			// Events.
-			if (player.isOnEvent() && !player.isOnSoloEvent() && (player.getTeam() == target.getTeam()))
-			{
-				return false;
-			}
-			
 			// Olympiad observer.
-			if (targetPlayer.inObserverMode())
+			if ((player.isOnEvent() && !player.isOnSoloEvent() && (player.getTeam() == target.getTeam())) || targetPlayer.inObserverMode())
 			{
 				return false;
 			}

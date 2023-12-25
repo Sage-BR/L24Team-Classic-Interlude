@@ -14,12 +14,5 @@ Else
 	path = Replace(path, "Program Files", "Progra~1")
 End If
 
-'Load java.cfg parameters.
-Dim parameters
-Set file = CreateObject("Scripting.FileSystemObject").OpenTextFile("java.cfg", 1)
-parameters = file.ReadLine()
-file.Close
-Set file = Nothing
-
 'Generate command.
-shell.Run "cmd /c start ""L2J 4Team - Login Server"" " & path & "java -cp ../libs/LoginServer.jar; org.l2j.loginserver.LoginServer", 1, False
+shell.Run "cmd /c start ""L2J 4Team - Login Server"" " & path & "java -server -XX:+UseCodeCacheFlushing -XX:+OptimizeStringConcat -XX:+UseG1GC -Xmx64m -cp ../libs/LoginServer.jar; org.l2j.loginserver.LoginServer", 1, False

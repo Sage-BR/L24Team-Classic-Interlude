@@ -61,11 +61,7 @@ public class Fan implements IAffectScopeHandler
 			{
 				return false;
 			}
-			if ((c != target) && (affectObject != null) && !affectObject.checkAffectedObject(creature, c))
-			{
-				return false;
-			}
-			if (!GeoEngine.getInstance().canSeeTarget(creature, c))
+			if (((c != target) && (affectObject != null) && !affectObject.checkAffectedObject(creature, c)) || !GeoEngine.getInstance().canSeeTarget(creature, c))
 			{
 				return false;
 			}

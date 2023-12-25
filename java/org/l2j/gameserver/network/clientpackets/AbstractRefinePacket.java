@@ -53,12 +53,8 @@ public abstract class AbstractRefinePacket implements ClientPacket
 		}
 		
 		// Check for item id
-		if (fee.getItemId() != feeItem.getId())
-		{
-			return false;
-		}
 		// Count must be greater or equal of required number
-		if (fee.getItemCount() > feeItem.getCount())
+		if ((fee.getItemId() != feeItem.getId()) || (fee.getItemCount() > feeItem.getCount()))
 		{
 			return false;
 		}
@@ -100,19 +96,7 @@ public abstract class AbstractRefinePacket implements ClientPacket
 		{
 			return false;
 		}
-		if (item.isShadowItem())
-		{
-			return false;
-		}
-		if (item.isCommonItem())
-		{
-			return false;
-		}
-		if (item.isEtcItem())
-		{
-			return false;
-		}
-		if (item.isTimeLimitedItem())
+		if (item.isShadowItem() || item.isCommonItem() || item.isEtcItem() || item.isTimeLimitedItem())
 		{
 			return false;
 		}

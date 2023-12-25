@@ -149,11 +149,7 @@ public class FenceData implements IXmlReader
 			{
 				continue;
 			}
-			if ((y < yMin) && (ty < yMin))
-			{
-				continue;
-			}
-			if ((y > yMax) && (ty > yMax))
+			if (((y < yMin) && (ty < yMin)) || ((y > yMax) && (ty > yMax)))
 			{
 				continue;
 			}

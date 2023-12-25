@@ -58,12 +58,7 @@ public class RequestPledgeSetMemberPowerGrade implements ClientPacket
 		}
 		
 		final ClanMember member = clan.getClanMember(_member);
-		if (member == null)
-		{
-			return;
-		}
-		
-		if (member.getObjectId() == clan.getLeaderId())
+		if ((member == null) || (member.getObjectId() == clan.getLeaderId()))
 		{
 			return;
 		}

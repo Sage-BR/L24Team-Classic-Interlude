@@ -44,13 +44,8 @@ public class NotFriendPc implements IAffectObjectHandler
 		if (player != null)
 		{
 			// Same player.
-			if (player == targetPlayer)
-			{
-				return false;
-			}
-			
 			// Peace Zone.
-			if (target.isInsidePeaceZone(player) && !player.getAccessLevel().allowPeaceAttack())
+			if ((player == targetPlayer) || (target.isInsidePeaceZone(player) && !player.getAccessLevel().allowPeaceAttack()))
 			{
 				return false;
 			}

@@ -122,12 +122,7 @@ public class TriggerSkillByAttack extends AbstractEffect
 		}
 		
 		// When no normal attacks are allowed.
-		if (!_allowNormalAttack && (event.getSkill() == null))
-		{
-			return;
-		}
-		
-		if (!_allowReflect && event.isReflect())
+		if ((!_allowNormalAttack && (event.getSkill() == null)) || (!_allowReflect && event.isReflect()))
 		{
 			return;
 		}

@@ -697,15 +697,8 @@ public abstract class Summon extends Playable
 		}
 		
 		// Check if all casting conditions are completed
-		if (!skill.checkCondition(this, target))
-		{
-			// Send a Server->Client packet ActionFailed to the Player
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
 		// Check if this is bad magic skill and if Player is in Olympiad and the match isn't already start, send a Server->Client packet ActionFailed
-		if (skill.isBad() && _owner.isInOlympiadMode() && !_owner.isOlympiadStart())
+		if (!skill.checkCondition(this, target) || (skill.isBad() && _owner.isInOlympiadMode() && !_owner.isOlympiadStart()))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;

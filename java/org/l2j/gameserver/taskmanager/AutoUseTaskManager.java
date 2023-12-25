@@ -316,13 +316,8 @@ public class AutoUseTaskManager
 						
 						// Casting on self stops movement.
 						final WorldObject target = player.getTarget();
-						if (target == player)
-						{
-							break SKILLS;
-						}
-						
 						// Check bad skill target.
-						if ((target == null) || ((Creature) target).isDead())
+						if ((target == player) || (target == null) || ((Creature) target).isDead())
 						{
 							break SKILLS;
 						}
