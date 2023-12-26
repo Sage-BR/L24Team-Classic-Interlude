@@ -2770,12 +2770,8 @@ public class Clan implements IIdentifiable, INamable
 			}
 			current = subunit.getSkill(skillId);
 			// is next level?
-			if ((current != null) && ((current.getLevel() + 1) == skillLevel))
-			{
-				return true;
-			}
 			// is first level?
-			if ((current == null) && (skillLevel == 1))
+			if (((current != null) && ((current.getLevel() + 1) == skillLevel)) || ((current == null) && (skillLevel == 1)))
 			{
 				return true;
 			}

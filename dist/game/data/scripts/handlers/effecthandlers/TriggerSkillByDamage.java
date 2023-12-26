@@ -99,12 +99,7 @@ public class TriggerSkillByDamage extends AbstractEffect
 			return;
 		}
 		
-		if ((_chance < 100) && (Rnd.get(100) > _chance))
-		{
-			return;
-		}
-		
-		if ((_hpPercent < 100) && (event.getTarget().getCurrentHpPercent() > _hpPercent))
+		if (((_chance < 100) && (Rnd.get(100) > _chance)) || ((_hpPercent < 100) && (event.getTarget().getCurrentHpPercent() > _hpPercent)))
 		{
 			return;
 		}

@@ -109,21 +109,11 @@ public class Action implements ClientPacket
 		}
 		
 		// Players can't interact with objects in the other instances
-		if (obj.getInstanceWorld() != player.getInstanceWorld())
-		{
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
+		
 		
 		// Only GMs can directly interact with invisible characters
-		if (!obj.isVisibleFor(player))
-		{
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
 		// Check if the target is valid, if the player haven't a shop or isn't the requester of a transaction (ex : FriendInvite, JoinAlly, JoinParty...)
-		if (player.getActiveRequester() != null)
+		if ((obj.getInstanceWorld() != player.getInstanceWorld()) || !obj.isVisibleFor(player) || (player.getActiveRequester() != null))
 		{
 			// Actions prohibited when in trade
 			player.sendPacket(ActionFailed.STATIC_PACKET);

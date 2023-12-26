@@ -383,13 +383,8 @@ public class ControllableMobAI extends AttackableAI
 		}
 		
 		final Attackable me = (Attackable) _actor;
-		if (target.isAlikeDead() || !me.isInsideRadius2D(target, me.getAggroRange()) || (Math.abs(_actor.getZ() - target.getZ()) > 100))
-		{
-			return false;
-		}
-		
 		// Check if the target isn't invulnerable
-		if (target.isInvul())
+		if (target.isAlikeDead() || !me.isInsideRadius2D(target, me.getAggroRange()) || (Math.abs(_actor.getZ() - target.getZ()) > 100) || target.isInvul())
 		{
 			return false;
 		}

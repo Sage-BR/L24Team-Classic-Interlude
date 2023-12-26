@@ -47,17 +47,8 @@ public class EnemyOnly implements ITargetTypeHandler
 		final Creature target = (Creature) selectedTarget;
 		
 		// You cannot attack yourself even with force.
-		if (creature == target)
-		{
-			if (sendMessage)
-			{
-				creature.sendPacket(SystemMessageId.INVALID_TARGET);
-			}
-			return null;
-		}
-		
 		// You cannot attack dead targets.
-		if (target.isDead() && !skill.isStayAfterDeath())
+		if ((creature == target) || (target.isDead() && !skill.isStayAfterDeath()))
 		{
 			if (sendMessage)
 			{

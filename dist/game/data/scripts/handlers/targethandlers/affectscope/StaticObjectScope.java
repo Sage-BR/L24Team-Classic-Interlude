@@ -52,12 +52,7 @@ public class StaticObjectScope implements IAffectScopeHandler
 				return false;
 			}
 			
-			if (!c.isDoor() && !(c instanceof StaticObject))
-			{
-				return false;
-			}
-			
-			if ((affectObject != null) && !affectObject.checkAffectedObject(creature, c))
+			if ((!c.isDoor() && !(c instanceof StaticObject)) || ((affectObject != null) && !affectObject.checkAffectedObject(creature, c)))
 			{
 				return false;
 			}

@@ -45,7 +45,6 @@ public abstract class AbstractRefinePacket implements ClientPacket
 	protected static boolean isValid(Player player, Item item, Item mineralItem, Item feeItem, VariationFee fee)
 	{
 		
-		
 		// GemStones must belong to owner
 		// .. and located in inventory
 		if ((fee == null) || !isValid(player, item, mineralItem) || (feeItem.getOwnerId() != player.getObjectId()) || (feeItem.getItemLocation() != ItemLocation.INVENTORY))
@@ -54,12 +53,8 @@ public abstract class AbstractRefinePacket implements ClientPacket
 		}
 		
 		// Check for item id
-		if (fee.getItemId() != feeItem.getId())
-		{
-			return false;
-		}
 		// Count must be greater or equal of required number
-		if (fee.getItemCount() > feeItem.getCount())
+		if ((fee.getItemId() != feeItem.getId()) || (fee.getItemCount() > feeItem.getCount()))
 		{
 			return false;
 		}
@@ -76,7 +71,6 @@ public abstract class AbstractRefinePacket implements ClientPacket
 	 */
 	protected static boolean isValid(Player player, Item item, Item mineralItem)
 	{
-		
 		
 		// Item must belong to owner
 		// Lifestone must be located in inventory
@@ -97,25 +91,12 @@ public abstract class AbstractRefinePacket implements ClientPacket
 	protected static boolean isValid(Player player, Item item)
 	{
 		
-		
 		// Item must belong to owner
 		if (!isValid(player) || (item.getOwnerId() != player.getObjectId()) || item.isAugmented() || item.isHeroItem())
 		{
 			return false;
 		}
-		if (item.isShadowItem())
-		{
-			return false;
-		}
-		if (item.isCommonItem())
-		{
-			return false;
-		}
-		if (item.isEtcItem())
-		{
-			return false;
-		}
-		if (item.isTimeLimitedItem())
+		if (item.isShadowItem() || item.isCommonItem() || item.isEtcItem() || item.isTimeLimitedItem())
 		{
 			return false;
 		}

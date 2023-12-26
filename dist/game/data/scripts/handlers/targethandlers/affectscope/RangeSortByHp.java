@@ -56,12 +56,7 @@ public class RangeSortByHp implements IAffectScopeHandler
 			}
 			
 			// Range skills appear to not affect you unless you are the main target.
-			if ((c == creature) && (target != creature))
-			{
-				return false;
-			}
-			
-			if ((affectObject != null) && !affectObject.checkAffectedObject(creature, c))
+			if (((c == creature) && (target != creature)) || ((affectObject != null) && !affectObject.checkAffectedObject(creature, c)))
 			{
 				return false;
 			}

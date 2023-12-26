@@ -98,17 +98,7 @@ public class RequestExEnchantSkill implements ClientPacket
 		}
 		
 		Skill skill = player.getKnownSkill(_skillId);
-		if (skill == null)
-		{
-			return;
-		}
-		
-		if (!skill.isEnchantable())
-		{
-			return;
-		}
-		
-		if (skill.getLevel() != _skillLevel)
+		if ((skill == null) || !skill.isEnchantable() || (skill.getLevel() != _skillLevel))
 		{
 			return;
 		}

@@ -100,7 +100,6 @@ public class AttackableAI extends CreatureAI
 	private boolean isAggressiveTowards(Creature target)
 	{
 		
-		
 		// Check if the target isn't invulnerable
 		// Check if the target isn't a Folk or a Door
 		if ((target == null) || (getActiveChar() == null) || target.isInvul() || target.isDoor())
@@ -126,13 +125,8 @@ public class AttackableAI extends CreatureAI
 		if (player != null)
 		{
 			// Don't take the aggro if the GM has the access level below or equal to GM_DONT_TAKE_AGGRO
-			if (!player.getAccessLevel().canTakeAggro())
-			{
-				return false;
-			}
-			
 			// check if the target is within the grace period for JUST getting up from fake death
-			if (player.isRecentFakeDeath())
+			if (!player.getAccessLevel().canTakeAggro() || player.isRecentFakeDeath())
 			{
 				return false;
 			}
@@ -157,12 +151,7 @@ public class AttackableAI extends CreatureAI
 		{
 			// depending on config, do not allow mobs to attack _new_ players in peacezones,
 			// unless they are already following those players from outside the peacezone.
-			if (!Config.ALT_MOB_AGRO_IN_PEACEZONE && target.isInsideZone(ZoneId.PEACE) && target.isInsideZone(ZoneId.NO_PVP))
-			{
-				return false;
-			}
-			
-			if (!me.isAggressive())
+			if ((!Config.ALT_MOB_AGRO_IN_PEACEZONE && target.isInsideZone(ZoneId.PEACE) && target.isInsideZone(ZoneId.NO_PVP)) || !me.isAggressive())
 			{
 				return false;
 			}
@@ -1033,7 +1022,6 @@ public class AttackableAI extends CreatureAI
 	private boolean checkSkillTarget(Skill skill, WorldObject target)
 	{
 		
-		
 		// Check if target is valid and within cast range.
 		if ((target == null) || (skill.getTarget(getActiveChar(), target, false, getActiveChar().isMovementDisabled(), false) == null) || !Util.checkIfInRange(skill.getCastRange(), getActiveChar(), target, true))
 		{
@@ -1045,13 +1033,8 @@ public class AttackableAI extends CreatureAI
 			// Skip if target is already affected by such skill.
 			if (skill.isContinuous())
 			{
-				if (((Creature) target).getEffectList().hasAbnormalType(skill.getAbnormalType(), i -> (i.getSkill().getAbnormalLevel() >= skill.getAbnormalLevel())))
-				{
-					return false;
-				}
-				
 				// There are cases where bad skills (negative effect points) are actually buffs and NPCs cast them on players, but they shouldn't.
-				if ((!skill.isDebuff() || !skill.isBad()) && target.isAutoAttackable(getActiveChar()))
+				if (((Creature) target).getEffectList().hasAbnormalType(skill.getAbnormalType(), i -> (i.getSkill().getAbnormalLevel() >= skill.getAbnormalLevel())) || ((!skill.isDebuff() || !skill.isBad()) && target.isAutoAttackable(getActiveChar())))
 				{
 					return false;
 				}

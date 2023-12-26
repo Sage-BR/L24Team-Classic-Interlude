@@ -109,13 +109,8 @@ public class RequestRefine extends AbstractRefinePacket
 		}
 		
 		// consume the life stone
-		if (!player.destroyItem("RequestRefine", mineralItem, 1, null, false))
-		{
-			return;
-		}
-		
 		// consume the gemstones
-		if (!player.destroyItem("RequestRefine", feeItem, _feeCount, null, false))
+		if (!player.destroyItem("RequestRefine", mineralItem, 1, null, false) || !player.destroyItem("RequestRefine", feeItem, _feeCount, null, false))
 		{
 			return;
 		}

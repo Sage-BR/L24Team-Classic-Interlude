@@ -56,11 +56,7 @@ public class FanPB implements IAffectScopeHandler
 			{
 				return false;
 			}
-			if ((affectObject != null) && !affectObject.checkAffectedObject(creature, c))
-			{
-				return false;
-			}
-			if (!GeoEngine.getInstance().canSeeTarget(creature, c))
+			if (((affectObject != null) && !affectObject.checkAffectedObject(creature, c)) || !GeoEngine.getInstance().canSeeTarget(creature, c))
 			{
 				return false;
 			}

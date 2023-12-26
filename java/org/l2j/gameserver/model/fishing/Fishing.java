@@ -447,12 +447,7 @@ public class Fishing
 		// }
 		if (GeoEngine.getInstance().hasGeo(baitX, baitY))
 		{
-			if (GeoEngine.getInstance().getHeight(baitX, baitY, baitZ) > baitZ)
-			{
-				return Integer.MIN_VALUE;
-			}
-			
-			if (GeoEngine.getInstance().getHeight(baitX, baitY, player.getZ()) > baitZ)
+			if ((GeoEngine.getInstance().getHeight(baitX, baitY, baitZ) > baitZ) || (GeoEngine.getInstance().getHeight(baitX, baitY, player.getZ()) > baitZ))
 			{
 				return Integer.MIN_VALUE;
 			}

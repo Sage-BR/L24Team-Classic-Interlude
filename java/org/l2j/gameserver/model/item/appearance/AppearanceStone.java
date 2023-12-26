@@ -346,13 +346,7 @@ public class AppearanceStone
 					}
 					case ALL:
 					{
-						if (!getCrystalTypes().isEmpty() && !getCrystalTypes().contains(targetItem.getTemplate().getCrystalType()))
-						{
-							player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
-							return false;
-						}
-						
-						if (findVisualChange(targetItem) == null)
+						if ((!getCrystalTypes().isEmpty() && !getCrystalTypes().contains(targetItem.getTemplate().getCrystalType())) || (findVisualChange(targetItem) == null))
 						{
 							player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 							return false;

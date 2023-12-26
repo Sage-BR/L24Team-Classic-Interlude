@@ -529,13 +529,8 @@ public abstract class Inventory extends ItemContainer
 						}
 						
 						final Skill skill = holder.getSkill();
-						if (skill == null)
-						{
-							continue;
-						}
-						
 						// Check passive skill conditions.
-						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
+						if ((skill == null) || (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player)))
 						{
 							continue;
 						}
@@ -638,13 +633,8 @@ public abstract class Inventory extends ItemContainer
 					}
 					
 					final Skill skill = holder.getSkill();
-					if (skill == null)
-					{
-						continue;
-					}
-					
 					// Check passive skill conditions.
-					if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
+					if ((skill == null) || (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player)))
 					{
 						continue;
 					}

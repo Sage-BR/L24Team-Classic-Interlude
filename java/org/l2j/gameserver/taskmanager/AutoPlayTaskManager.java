@@ -35,6 +35,7 @@ import org.l2j.gameserver.model.zone.ZoneId;
 import org.l2j.gameserver.util.Util;
 
 /**
+ * Manages the AutoPlay functionality for players.
  * @author 4Team
  */
 public class AutoPlayTaskManager
@@ -44,7 +45,10 @@ public class AutoPlayTaskManager
 	private static final int TASK_DELAY = 300;
 	private static final Integer AUTO_ATTACK_ACTION = 2;
 	
-	protected AutoPlayTaskManager()
+	/**
+	 * Private constructor to prevent external instantiation.
+	 */
+	private AutoPlayTaskManager()
 	{
 	}
 	
@@ -253,6 +257,10 @@ public class AutoPlayTaskManager
 		}
 	}
 	
+	/**
+	 * Starts the AutoPlay functionality for the specified player.
+	 * @param player The player to start AutoPlay for.
+	 */
 	public synchronized void startAutoPlay(Player player)
 	{
 		for (Set<Player> pool : POOLS)
@@ -282,6 +290,10 @@ public class AutoPlayTaskManager
 		POOLS.add(pool);
 	}
 	
+	/**
+	 * Stops the AutoPlay functionality for the specified player.
+	 * @param player The player to stop AutoPlay for.
+	 */
 	public void stopAutoPlay(Player player)
 	{
 		for (Set<Player> pool : POOLS)
@@ -307,6 +319,10 @@ public class AutoPlayTaskManager
 		}
 	}
 	
+	/**
+	 * Gets the instance of the AutoPlayTaskManager.
+	 * @return The instance of AutoPlayTaskManager.
+	 */
 	public static AutoPlayTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;

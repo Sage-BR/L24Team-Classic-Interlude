@@ -85,14 +85,7 @@ public class RequestShapeShiftingItem implements ClientPacket
 			return;
 		}
 		
-		if ((targetItem.getItemLocation() != ItemLocation.INVENTORY) && (targetItem.getItemLocation() != ItemLocation.PAPERDOLL))
-		{
-			player.sendPacket(ExShapeShiftingResult.CLOSE);
-			player.removeRequest(ShapeShiftingItemRequest.class);
-			return;
-		}
-		
-		if ((stone = inventory.getItemByObjectId(stone.getObjectId())) == null)
+		if (((targetItem.getItemLocation() != ItemLocation.INVENTORY) && (targetItem.getItemLocation() != ItemLocation.PAPERDOLL)) || ((stone = inventory.getItemByObjectId(stone.getObjectId())) == null))
 		{
 			player.sendPacket(ExShapeShiftingResult.CLOSE);
 			player.removeRequest(ShapeShiftingItemRequest.class);

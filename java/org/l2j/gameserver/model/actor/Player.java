@@ -7167,18 +7167,10 @@ public class Player extends Playable
 							continue;
 						}
 						
-						if (skill.isMentoring())
-						{
-							continue;
-						}
+						
 						
 						// Dances and songs are not kept in retail.
-						if (skill.isDance() && !Config.ALT_STORE_DANCES)
-						{
-							continue;
-						}
-						
-						if (storedSkills.contains(skill.getReuseHashCode()))
+						if (skill.isMentoring() || (skill.isDance() && !Config.ALT_STORE_DANCES) || storedSkills.contains(skill.getReuseHashCode()))
 						{
 							continue;
 						}
@@ -8065,13 +8057,8 @@ public class Player extends Playable
 		}
 		
 		// Check if the attacker isn't the Player Pet
-		if ((attacker == this) || (attacker == _pet) || attacker.hasServitor(attacker.getObjectId()))
-		{
-			return false;
-		}
-		
 		// Friendly mobs do not attack players
-		if (attacker instanceof FriendlyMob)
+		if ((attacker == this) || (attacker == _pet) || attacker.hasServitor(attacker.getObjectId()) || (attacker instanceof FriendlyMob))
 		{
 			return false;
 		}
@@ -8263,14 +8250,8 @@ public class Player extends Playable
 		// ************************************* Check Player State *******************************************
 		
 		// Abnormal effects(ex : Stun, Sleep...) are checked in Creature useMagic()
-		if (!usedSkill.canCastWhileDisabled() && (isControlBlocked() || hasBlockActions()))
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
 		// Check if the player is dead
-		if (isDead())
+		if ((!usedSkill.canCastWhileDisabled() && (isControlBlocked() || hasBlockActions())) || isDead())
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;

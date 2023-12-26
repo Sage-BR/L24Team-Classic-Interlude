@@ -97,9 +97,7 @@ public class AutoUseTaskManager
 					continue;
 				}
 				
-				final boolean isInPeaceZone = player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.SAYUNE);
-				
-				if (Config.ENABLE_AUTO_ITEM && !isInPeaceZone)
+				if (Config.ENABLE_AUTO_ITEM)
 				{
 					ITEMS: for (Integer itemId : player.getAutoUseSettings().getAutoSupplyItems())
 					{
@@ -159,7 +157,7 @@ public class AutoUseTaskManager
 					}
 				}
 				
-				if (Config.ENABLE_AUTO_POTION && !isInPeaceZone && (player.getCurrentHpPercent() < player.getAutoPlaySettings().getAutoPotionPercent()))
+				if (Config.ENABLE_AUTO_POTION && (player.getCurrentHpPercent() < player.getAutoPlaySettings().getAutoPotionPercent()))
 				{
 					final int itemId = player.getAutoUseSettings().getAutoPotionItem();
 					if (itemId > 0)
@@ -200,10 +198,9 @@ public class AutoUseTaskManager
 					{
 						// Fixes start area issue.
 						
-						
 						// Already casting.
 						// Player is teleporting.
-						if (isInPeaceZone || player.isCastingNow() || player.isTeleporting())
+						if (player.isCastingNow() || player.isTeleporting())
 						{
 							break BUFFS;
 						}
@@ -317,13 +314,8 @@ public class AutoUseTaskManager
 						
 						// Casting on self stops movement.
 						final WorldObject target = player.getTarget();
-						if (target == player)
-						{
-							break SKILLS;
-						}
-						
 						// Check bad skill target.
-						if ((target == null) || ((Creature) target).isDead())
+						if ((target == player) || (target == null) || ((Creature) target).isDead())
 						{
 							break SKILLS;
 						}

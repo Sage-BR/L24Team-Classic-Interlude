@@ -1193,7 +1193,9 @@ public class Config
 	public static boolean MULTILANG_VOICED_ALLOW;
 	public static boolean NOBLESS_MASTER_ENABLED;
 	public static int NOBLESS_MASTER_NPCID;
-	
+	public static int NOBLESS_MASTER_LEVEL_REQUIREMENT;
+	public static int NOBLESS_COIN;
+	public static long NOBLESS_COIN_COUNT;
 	public static boolean NOBLESS_MASTER_REWARD_TIARA;
 	public static boolean L2WALKER_PROTECTION;
 	public static int DUALBOX_CHECK_MAX_PLAYERS_PER_IP;
@@ -3316,7 +3318,10 @@ public class Config
 			final PropertiesParser noblessMasterConfig = new PropertiesParser(CUSTOM_NOBLESS_MASTER_CONFIG_FILE);
 			NOBLESS_MASTER_ENABLED = noblessMasterConfig.getBoolean("Enabled", false);
 			NOBLESS_MASTER_NPCID = noblessMasterConfig.getInt("NpcId", 1003000);
+			NOBLESS_MASTER_LEVEL_REQUIREMENT = noblessMasterConfig.getInt("LevelRequirement", 80);
 			NOBLESS_MASTER_REWARD_TIARA = noblessMasterConfig.getBoolean("RewardTiara", false);
+			NOBLESS_COIN = noblessMasterConfig.getInt("NoblessCoin", 57);
+			NOBLESS_COIN_COUNT = noblessMasterConfig.getLong("NoblessCoinCount", 1000000000);
 			
 			// Load OfflinePlay config file (if exists)
 			final PropertiesParser offlinePlayConfig = new PropertiesParser(CUSTOM_OFFLINE_PLAY_CONFIG_FILE);
@@ -3915,10 +3920,18 @@ public class Config
 			String externalIp = "127.0.0.1";
 			try
 			{
-				final URL autoIp = new URL("http://ip1.dynupdate.no-ip.com:8245/");
-				try (BufferedReader in = new BufferedReader(new InputStreamReader(autoIp.openStream())))
+				// Para IPv4
+				final URL autoIpV4 = new URL("http://ip1.dynupdate.no-ip.com/");
+				try (BufferedReader inV4 = new BufferedReader(new InputStreamReader(autoIpV4.openStream())))
 				{
-					externalIp = in.readLine();
+					externalIp = inV4.readLine();
+				}
+				
+				// Para IPv6
+				final URL autoIpV6 = new URL("http://ip1.dynupdate6.no-ip.com/");
+				try (BufferedReader inV6 = new BufferedReader(new InputStreamReader(autoIpV6.openStream())))
+				{
+					externalIp = inV6.readLine();
 				}
 			}
 			catch (IOException e)
