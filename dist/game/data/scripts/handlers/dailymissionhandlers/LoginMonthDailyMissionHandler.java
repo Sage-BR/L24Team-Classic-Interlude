@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ import org.l2j.gameserver.model.events.impl.creature.player.OnPlayerLogin;
 import org.l2j.gameserver.model.events.listeners.ConsumerEventListener;
 
 /**
- * @author Iris, 4Team
+ * @author Iris, Mobius
  */
 public class LoginMonthDailyMissionHandler extends AbstractDailyMissionHandler
 {

@@ -7167,8 +7167,6 @@ public class Player extends Playable
 							continue;
 						}
 						
-						
-						
 						// Dances and songs are not kept in retail.
 						if (skill.isMentoring() || (skill.isDance() && !Config.ALT_STORE_DANCES) || storedSkills.contains(skill.getReuseHashCode()))
 						{
@@ -8064,13 +8062,8 @@ public class Player extends Playable
 		}
 		
 		// Check if the attacker is a Monster
-		if (attacker.isMonster())
-		{
-			return true;
-		}
-		
 		// is AutoAttackable if both players are in the same duel and the duel is still going on
-		if (attacker.isPlayable() && (_duelState == Duel.DUELSTATE_DUELLING) && (getDuelId() == attacker.getActingPlayer().getDuelId()))
+		if (attacker.isMonster() || (attacker.isPlayable() && (_duelState == Duel.DUELSTATE_DUELLING) && (getDuelId() == attacker.getActingPlayer().getDuelId())))
 		{
 			return true;
 		}
@@ -8349,14 +8342,8 @@ public class Player extends Playable
 		// Create and set a WorldObject containing the target of the skill
 		final WorldObject target = usedSkill.getTarget(this, forceUse, dontMove, true);
 		final Location worldPosition = _currentSkillWorldPosition;
-		if ((usedSkill.getTargetType() == TargetType.GROUND) && (worldPosition == null))
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		
 		// Check the validity of the target
-		if (target == null)
+		if (((usedSkill.getTargetType() == TargetType.GROUND) && (worldPosition == null)) || (target == null))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;

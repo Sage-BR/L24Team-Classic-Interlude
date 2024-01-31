@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -122,7 +122,12 @@ public class TriggerSkillByAttack extends AbstractEffect
 		}
 		
 		// When no normal attacks are allowed.
-		if ((!_allowNormalAttack && (event.getSkill() == null)) || (!_allowReflect && event.isReflect()))
+		if (!_allowNormalAttack && (event.getSkill() == null))
+		{
+			return;
+		}
+		
+		if (!_allowReflect && event.isReflect())
 		{
 			return;
 		}
@@ -172,6 +177,11 @@ public class TriggerSkillByAttack extends AbstractEffect
 			else
 			{
 				triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
+				
+				if (event.getAttacker().isSkillDisabled(buffInfo.getSkill()))
+				{
+					return;
+				}
 			}
 			
 			if ((buffInfo == null) || (buffInfo.getSkill().getLevel() < triggerSkill.getLevel()))

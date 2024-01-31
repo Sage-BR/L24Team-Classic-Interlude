@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ import org.l2j.gameserver.model.skill.Skill;
 
 /**
  * Brothers Bound in Chains (500)
- * @author 4Team (Based on GoD quest.)
+ * @author Mobius (Based on GoD quest.)
  * @URL https://l2wiki.com/classic/Brothers_Bound_in_Chains
  */
 public class Q00500_BrothersBoundInChains extends Quest
@@ -237,6 +237,7 @@ public class Q00500_BrothersBoundInChains extends Quest
 			return;
 		}
 		final Attackable target = event.getTarget();
+		
 		
 		// Retail prohibitions.
 		if ((target == null) || ((target.getLevel() - player.getLevel()) < -6) || target.isRaid() || target.isRaidMinion())

@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ import org.l2j.gameserver.model.actor.Player;
 import org.l2j.gameserver.taskmanager.AutoPotionTaskManager;
 
 /**
- * @author 4Team, Gigi
+ * @author Mobius, Gigi
  */
 public class AutoPotion implements IVoicedCommandHandler
 {

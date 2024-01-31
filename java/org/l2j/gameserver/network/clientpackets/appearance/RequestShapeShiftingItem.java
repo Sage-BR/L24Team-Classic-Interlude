@@ -93,14 +93,7 @@ public class RequestShapeShiftingItem implements ClientPacket
 		}
 		
 		final AppearanceStone appearanceStone = AppearanceItemData.getInstance().getStone(stone.getId());
-		if (appearanceStone == null)
-		{
-			player.sendPacket(ExShapeShiftingResult.CLOSE);
-			player.removeRequest(ShapeShiftingItemRequest.class);
-			return;
-		}
-		
-		if (!appearanceStone.checkConditions(player, targetItem))
+		if ((appearanceStone == null) || !appearanceStone.checkConditions(player, targetItem))
 		{
 			player.sendPacket(ExShapeShiftingResult.CLOSE);
 			player.removeRequest(ShapeShiftingItemRequest.class);

@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,10 +39,11 @@ public class OpSkillAcquireSkillCondition implements ISkillCondition
 	@Override
 	public boolean canUse(Creature caster, Skill skill, WorldObject target)
 	{
-		if (!target.isCreature())
+		if ((target == null) || !target.isCreature())
 		{
 			return false;
 		}
+		
 		final int skillLevel = ((Creature) target).getSkillLevel(_skillId);
 		return _hasLearned ? skillLevel != 0 : skillLevel == 0;
 	}

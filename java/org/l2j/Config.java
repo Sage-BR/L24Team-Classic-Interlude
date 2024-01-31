@@ -3921,18 +3921,12 @@ public class Config
 			try
 			{
 				// Para IPv4
-				final URL autoIpV4 = new URL("http://ip1.dynupdate.no-ip.com/");
-				try (BufferedReader inV4 = new BufferedReader(new InputStreamReader(autoIpV4.openStream())))
+				final URL autoIp = new URL("http://checkip.amazonaws.com");
+				try (BufferedReader inIP = new BufferedReader(new InputStreamReader(autoIp.openStream())))
 				{
-					externalIp = inV4.readLine();
+					externalIp = inIP.readLine();
 				}
 				
-				// Para IPv6
-				final URL autoIpV6 = new URL("http://ip1.dynupdate6.no-ip.com/");
-				try (BufferedReader inV6 = new BufferedReader(new InputStreamReader(autoIpV6.openStream())))
-				{
-					externalIp = inV6.readLine();
-				}
 			}
 			catch (IOException e)
 			{

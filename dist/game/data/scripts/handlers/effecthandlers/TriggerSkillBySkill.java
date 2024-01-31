@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -114,6 +114,15 @@ public class TriggerSkillBySkill extends AbstractEffect
 			if (buffInfo != null)
 			{
 				triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
+				
+				if (event.getCaster().isSkillDisabled(buffInfo.getSkill()))
+				{
+					if ((_replace) && (buffInfo.getSkill().getLevel() == _skillLevelScaleTo))
+					{
+						((Creature) target).stopSkillEffects(SkillFinishType.SILENT, triggerSkill.getId());
+					}
+					return;
+				}
 			}
 			else
 			{

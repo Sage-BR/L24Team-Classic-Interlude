@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ import org.l2j.gameserver.model.zone.ZoneId;
 import org.l2j.gameserver.network.serverpackets.CreatureSay;
 
 /**
- * @author 4Team (based on Tenkai pvpzone)
+ * @author Mobius (based on Tenkai pvpzone)
  */
 public class FindPvP implements IBypassHandler
 {

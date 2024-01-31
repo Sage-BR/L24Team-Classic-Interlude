@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ import ai.AbstractNpcAI;
  * Dummy AI for spawns/respawns only for testing.
  * @author Gnacik
  */
-@Disabled // 4Team: this needs to be rewritten.
+@Disabled // Mobius: this needs to be rewritten.
 public class DenOfEvil extends AbstractNpcAI
 {
 	// private static final int _buffer_id = 32656;

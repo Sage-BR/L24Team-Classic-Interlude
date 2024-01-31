@@ -4,22 +4,24 @@ AbsorbDamage: Absorbs given amount of damage. Immune message is displayed when d
 AbstractConditionalHpEffect: Abstract class for managing conditional HP stats. Skills like Frenzy, Final Fortress, etc.
 AbstractStatAddEffect: Abstract class for managing stat adding.
 AbstractStatEffect: Abstract class for managing stats.
-AbstractStatPercentEffect: Abstract class for managing stat percentages. (l2j4team)
+AbstractStatPercentEffect: Abstract class for managing stat percentages. (l2jmobius)
 Accuracy: P. Accuracy stat.
 AddHate: Instant effect that increases target's hate towards you.
-AdditionalPotionCp: Increases the amount of CP heal gained from potions or elixirs. (l2j4team)
-AdditionalPotionHp: Increases the amount of HP heal gained from potions or elixirs. (l2j4team)
-AdditionalPotionMp: Increases the amount of MP heal gained from potions or elixirs. (l2j4team)
-AddPcCafePoints: Increase PcCafe points permanently. (l2j4team)
-AddSkillBySkill: Add skill when other skill already exists. (l2j4team)
+AdditionalPotionCp: Increases the amount of CP heal gained from potions or elixirs. (l2jmobius)
+AdditionalPotionHp: Increases the amount of HP heal gained from potions or elixirs. (l2jmobius)
+AdditionalPotionMp: Increases the amount of MP heal gained from potions or elixirs. (l2jmobius)
+AddMaxMagicCriticalRate: Stat that overrides the default config MAX_MCRIT_RATE. (l2jmobius)
+AddMaxPhysicalCriticalRate: Stat that overrides the default config MAX_PCRIT_RATE. (l2jmobius)
+AddPcCafePoints: Increase PcCafe points permanently. (l2jmobius)
+AddSkillBySkill: Add skill when other skill already exists. (l2jmobius)
 AddTeleportBookmarkSlot: Instant effect that increases the amount of My Teleport slots.
-AirBind: Used by airbind chain skills. (l2j4team)
+AirBind: Used by airbind chain skills. (l2jmobius)
 AreaDamage: Topography (Danger Zone) resistance stat.
 AttackAttribute: Stat that increases specific attack attribute.
 AttackAttributeAdd: Stat that increases all attack attribute.
 AttackBehind: Enables all attacks regardless of position to land towards the back.
 AttackTrait: Stat that manages all attack traits.
-AutoAttackDamageBonus: Auto attack damage modifier. (l2j4team)
+AutoAttackDamageBonus: Auto attack damage modifier. (l2jmobius)
 Backstab: Inflicts physical damage according to the backstab formula.
 Betray: Causes the target summon to attack its owner.
 Blink: Teleport to location effect.
@@ -33,19 +35,19 @@ BlockEscape: Blocks teleportation
 BlockMove: Blocks movement. Root.
 BlockParty: Party ban effect (Bot Report button stuff)
 BlockResurrection: Blocked target from getting ressurected.
-BlockSkill: Blocks usage of given skill magic types or specific skill ids. (l2j4team)
+BlockSkill: Blocks usage of given skill magic types or specific skill ids. (l2jmobius)
 BlockTarget: Causes the target to become untargetable.
 Bluff: Rotates the target so you face its back.
-BonusDropAdena: Bonus amount for dropped adena. (l2j4team)
-BonusDropAmount: Bonus amount for dropped items. (l2j4team)
-BonusDropRate: Bonus chance for dropping items. (l2j4team)
-BonusSpoilRate: Bonus chance for acquiring spoil items. (l2j4team)
+BonusDropAdena: Bonus amount for dropped adena. (l2jmobius)
+BonusDropAmount: Bonus amount for dropped items. (l2jmobius)
+BonusDropRate: Bonus chance for dropping items. (l2jmobius)
+BonusSpoilRate: Bonus chance for acquiring spoil items. (l2jmobius)
 Breath: Underwater breathing stat.
 BuffBlock: Blocks target from receiving buffs.
-CallLearnedSkill: Calls existing learned skill. (l2j4team)
+CallLearnedSkill: Calls existing learned skill. (l2jmobius)
 CallParty: Recalls whole party.
 CallPc: Recalls a Player.
-CallRandomSkill: Triggers a random skill. (l2j4team)
+CallRandomSkill: Triggers a random skill. (l2jmobius)
 CallSkill: Triggers a specified skill.
 CallSkillOnActionTime: Triggers a specified skill every given amount of time.
 CallTargetParty: Recalls the whole party of the target.
@@ -57,7 +59,7 @@ ChangeHairColor: Changes the Player's hair color.
 ChangeHairStyle: Changes the Player's Hair style.
 CheapShot: Oldschool cheap shot SA effect. Has a chance to consume less soulshots during attack.
 ClassChange: Switch to the given subclass index. Main class, Dual class, Sub-class 1, Sub-Class 2.
-Compelling: Force target to move at caster. (l2j4team)
+Compelling: Force target to move at caster. (l2jmobius)
 Confuse: Causes the target to attack random target.
 ConsumeBody: Removes target NPC's corpse.
 ConvertItem: Kamael's Change Weapon skill effect.
@@ -67,7 +69,7 @@ CpHealOverTime: Increases current CP by a given amount over time.
 CpHealPercent: Increases current CP by a given percentage amount.
 Cp: Increases current CP by a static amount.
 CpRegen: CP Regeneration stat.
-CraftRate: Craft success rate bonus. (l2j4team)
+CraftRate: Craft success rate bonus. (l2jmobius)
 CraftingCritical: Crafting critical stat.
 CriticalDamage: Critical Damage stat.
 CriticalDamagePosition: Critical Damage depending on position stat.
@@ -88,14 +90,14 @@ DefenceCriticalDamage: Critical Damage resist stat.
 DefenceCriticalRate: Critical Rate resist stat.
 DefenceMagicCriticalDamage: Magic Critical Damage resist stat.
 DefenceMagicCriticalRate: Magic Critical Rate resist stat.
-DefencePhysicalSkillCriticalDamage: Physical skill Critical Damage resist stat. (l2j4team)
+DefencePhysicalSkillCriticalDamage: Physical skill Critical Damage resist stat. (l2jmobius)
 DefenceTrait: Stat that manages all defence traits.
 DeleteHate: Has a chance to delete target's hate towards everyone.
 DeleteHateOfMe: Has a chance to delete target's hate towards you.
 DeleteTopAgro: Has a chance to delete target's most hated from the list.
 DetectHiddenObjects: Finds hidden doors
 Detection: Detects hidden creatures.
-DisableSkill: Disables effectors known skills specified by skill ID. (l2j4team)
+DisableSkill: Disables effectors known skills specified by skill ID. (l2jmobius)
 DisableTargeting: Disables your target's ability to target.
 Disarm: Removes the weapon of target player.
 Disarmor: Removes the armor of target player.
@@ -105,10 +107,10 @@ DispelBySlot: Removes given amount of target's effects by specified AbnormalType
 DispelBySlotMyself: Removes given amount of effects by specified AbnormalType
 DispelBySlotProbability: Removes given amount of effects by specified AbnormalType at a given rate.
 DoubleCast: Triggers Fire, Water, Wind, Earth stance and enables the ability to cast two skills at once.
-DragonWeaponDefence: Dragon weapon defence stat. (l2j4team)
-DuelistFury: Synergy effect for Faceoff effect. (l2j4team)
+DragonWeaponDefence: Dragon weapon defence stat. (l2jmobius)
+DuelistFury: Synergy effect for Faceoff effect. (l2jmobius)
 EnableCloak: See/unsee cloaks.
-EnchantRate: Enchant rate modifier, does not work for non grade items. (l2j4team)
+EnchantRate: Enchant rate modifier, does not work for non grade items. (l2jmobius)
 EnemyCharge: Charges towards the enemy. Rush Impact.
 EnergyAttack: Physical attack based on Momentum formula. Triple Sonic Slash, Double Sonic Slash etc.
 EnlargeAbnormalSlot: Increase the amount of buff slots.
@@ -119,10 +121,10 @@ Faceoff: Focuses attacking a given target with all other damage blocked.
 FakeDeath: Plays dead to avoid enemy NPC aggression.
 FatalBlow: Physical attack based on blow formula. Deadly Blow, Lethal Blow etc.
 FatalBlowRate: Blow land rate stat.
-FatalBlowRateDefence: Blow land rate defence stat. (l2j4team)
+FatalBlowRateDefence: Blow land rate defence stat. (l2jmobius)
 Fear: Causes the target to run away. Does not block it though.
 Feed: Gives food to pet.
-FishingExpSpBonus: Bonus Exp and SP from fishing. (l2j4team)
+FishingExpSpBonus: Bonus Exp and SP from fishing. (l2jmobius)
 Flag: Starts pvpflag.
 FlyMove: Moves towards target location.
 FocusEnergy: Max momentum stat.
@@ -132,13 +134,13 @@ FocusSouls: Increases souls by a given value.
 GetAgro: Causes enemy NPC to attack you.
 GetDamageLimit: Sets the maximum amount of damage you can receive.
 GetMomentum: Increases momentum by a given value at fixed rate.
-GiveClanReputation: Gives clan reputation points to a players clan. (l2j4team)
-GiveExpAndSp: Gives a given amount of XP and SP. (l2j4team)
-GiveFame: Gives a given amount of Fame. (l2j4team)
-GiveItemByExp: Gives an item when a certain amount of EXP is gathered. (l2j4team)
+GiveClanReputation: Gives clan reputation points to a players clan. (l2jmobius)
+GiveExpAndSp: Gives a given amount of XP and SP. (l2jmobius)
+GiveFame: Gives a given amount of Fame. (l2jmobius)
+GiveItemByExp: Gives an item when a certain amount of EXP is gathered. (l2jmobius)
 GiveRecommendation: Gives recommendations to a player. Blue name.
 GiveSp: Gives a given amount of SP.
-GiveXp: Gives a given amount of XP. (l2j4team)
+GiveXp: Gives a given amount of XP. (l2jmobius)
 Grow: Sets NPC collision to its growth collision.
 HairAccessorySet: See/Unsee hair accessory.
 Harvesting: Manor's harvesting seed.
@@ -155,12 +157,12 @@ HpCpHealCritical: HpCp heal effects always trigger Magic Critical Hit.
 HpCpHeal: Increases current HP by a given amount. If the given amount exceeds maximum HP, it increases current CP with the rest value as well.
 HpDrain: Magical attack that absorbs given percentage of the damage inflicted as HP.
 Hp: Increases current HP by a static value.
-HpLimit: Increase a character's max hp limit (l2j4team)
+HpLimit: Increase a character's max hp limit (l2jmobius)
 HpRegen: HP Regeneration stat.
 HpToOwner: DOT effect that absorbs HP over time.
 IgnoreDeath: Become undying. Hp cannot decrease below 1.
-ImmobileDamageBonus: Bonus damage to immobile targets. (l2j4team)
-ImmobileDamageResist: Resist damage while immobile. (l2j4team)
+ImmobileDamageBonus: Bonus damage to immobile targets. (l2jmobius)
+ImmobileDamageResist: Resist damage while immobile. (l2jmobius)
 ImmobilePetBuff: Causes your pet to become immobilized.
 InstantKillResist: Resist against Lethal strike.
 KarmaCount: Sets current Karma.
@@ -182,7 +184,7 @@ MagicalAttackSpeed: Casting Spd. stat
 MagicalDamOverTime: Magical attack over time.
 MagicalDefence: M. Def stat.
 MagicalEvasion: M. Evasion stat.
-MagicalSkillPower: Magical Skill Power stat. (l2j4team)
+MagicalSkillPower: Magical Skill Power stat. (l2jmobius)
 MagicalSoulAttack: Magical attack based on souls formula.
 MagicCriticalDamage: Magical Critical Damage stat
 MagicCriticalRate: Magical Critical Rate stat.
@@ -196,7 +198,6 @@ ManaHealPercent: Increases current MP by a given percentage.
 MAtk: M. Atk. stat.
 MaxCp: Max. CP stat.
 MaxHp: Max. HP stat.
-MaxMagicCriticalRate: Stat that overrides the default config MAX_MCRIT_RATE. (l2j4team)
 MaxMp: Max. MP stat.
 ModifyVital: Modifies current HP/MP/CP
 MpConsumePerLevel: Consumes mana over time depending on your level.
@@ -205,7 +206,7 @@ MpRegen: MP Regeneration stat.
 MpShield: Transfers given percentage of damage as mana damage. Mana Shield.
 MpVampiricAttack: Absorbs given percentage of mana during attack.
 Mute: Prevents target from using magical skills. Silence.
-NightStatModify: Modify a specific stat at night time. (l2j4team)
+NightStatModify: Modify a specific stat at night time. (l2jmobius)
 NoblesseBless: Does not remove buffs upon death except itself.
 OpenChest: Opens a treasure chest.
 OpenCommonRecipeBook: Shows the common recipe book window.
@@ -226,7 +227,7 @@ PhysicalEvasion: P. Evasion stat.
 PhysicalMute: Prevents the usage of physical skills. Shield Slam.
 PhysicalShieldAngleAll: Causes the shield to block at 360 degree angle.
 PhysicalSkillCriticalDamage: Physical skill critical damage stat.
-PhysicalSkillCriticalRate: Physical skill critical rate stat. (l2j4team)
+PhysicalSkillCriticalRate: Physical skill critical rate stat. (l2jmobius)
 PhysicalSkillPower: Physical Skill Power stat.
 PhysicalSoulAttack: Physical attack depending on souls.
 PkCount: Increases PK kills.
@@ -241,11 +242,11 @@ PvePhysicalAttackDamageBonus: Autoattack damage stat against NPCs.
 PvePhysicalAttackDefenceBonus: Autoattack defence stat when taking damage from NPCs.
 PvePhysicalSkillDamageBonus: Physical skill damage stat against NPCs.
 PvePhysicalSkillDefenceBonus: Physical skill defence stat when taking damage from NPCs.
-PveRaidMagicalSkillDamageBonus: Magical skill damage stat against Raidbosses. (l2j4team)
+PveRaidMagicalSkillDamageBonus: Magical skill damage stat against Raidbosses. (l2jmobius)
 PveRaidMagicalSkillDefenceBonus: Magical skill defence stat when taking damage from Raidboss NPCs.
-PveRaidPhysicalAttackDamageBonus: Autoattack damage stat against Raidbosses. (l2j4team)
+PveRaidPhysicalAttackDamageBonus: Autoattack damage stat against Raidbosses. (l2jmobius)
 PveRaidPhysicalAttackDefenceBonus: Autoattack defence stat when taking damage from Raidboss NPCs.
-PveRaidPhysicalSkillDamageBonus: Physical skill damage stat against Raidbosses. (l2j4team)
+PveRaidPhysicalSkillDamageBonus: Physical skill damage stat against Raidbosses. (l2jmobius)
 PveRaidPhysicalSkillDefenceBonus: Physical skill defence stat when taking damage from Raidboss NPCs.
 PvpMagicalSkillDamageBonus: Magical skill damage stat against Players and Summons.
 PvpMagicalSkillDefenceBonus: Magical skill defence stat when taking damage from Players and Summons.
@@ -255,18 +256,18 @@ PvpPhysicalSkillDamageBonus: Physical skill damage stat against Players and Summ
 PvpPhysicalSkillDefenceBonus: Physical skill defence stat when taking damage from Players and Summons.
 RandomizeHate: Target NPC stops hating you and starts hating random target with your hate.
 RealDamage: Static damage.
-RealDamageResist: Resist modifier for RealDamage effect. (l2j4team)
-RearDamage: Multiplier for damage done from behind the target. (l2j4team)
+RealDamageResist: Resist modifier for RealDamage effect. (l2jmobius)
+RearDamage: Multiplier for damage done from behind the target. (l2jmobius)
 RebalanceHP: Balances targets' current HP.
 RebalanceHPSummon: Balances targets' current HP for summons.
-RecoverVitalityInPeaceZone: Recover periodically vitality when player is in a peace zone. (l2j4team)
+RecoverVitalityInPeaceZone: Recover periodically vitality when player is in a peace zone. (l2jmobius)
 ReduceCancel: Magic skill casting interruption stat.
 ReduceDropPenalty: Reduces EXP lost and death penalty chance.
 ReflectMagic: Deflects magical damage back to the attacker.
 ReflectSkill: Deflects physical/magical debuffs back to the attacker.
 RefuelAirship: Increases Airship's fuel.
 Relax: Sits down and increases HP regeneration until full.
-ResetInstanceEntry: Resets instance re-entry time. (l2j4team)
+ResetInstanceEntry: Resets instance re-entry time. (l2jmobius)
 ResistAbnormalByCategory: Buff/debuff resist stat.
 ResistDDMagic: Magic resist stat (magic attack 50% effective or 1 damage)
 ResistDispelByCategory: Buff/Debuff cancellation resist.
@@ -276,23 +277,23 @@ RestorationRandom: Creates items randomly from a specified list. Its multiplied 
 Resurrection: Resurrects target Player or Summon.
 ResurrectionSpecial: Resurrects target Player or Summon only in specified instance IDs.
 Reuse: Decreases skill reuse time based on its magic type.
-ReuseSkillById: Resets reuse time for the skill with the specific id. (l2j4team)
+ReuseSkillById: Resets reuse time for the skill with the specific id. (l2jmobius)
 Root: Stops movement.
-SacrificeSummon: Sacrifices the players summon. (l2j4team)
+SacrificeSummon: Sacrifices the players summon. (l2jmobius)
 SafeFallHeight: Minimum falling height for taking damage stat.
 SendSystemMessageToClan: Sends the specified SystemMessageId to the clan.
 ServitorShare: Servitor share effect.
 SetHp: Sets current HP to the given amount.
-SetCp: Sets current CP to the given amount. (l2j4team)
+SetCp: Sets current CP to the given amount. (l2jmobius)
 SetSkill: Adds a skill to the Player and saves it in the database.
 ShieldDefence: Shield P. Def stat.
 ShieldDefenceRate: Shield block success rate stat.
-ShotsBonus: Additional shot damage bonus. (l2j4team)
+ShotsBonus: Additional shot damage bonus. (l2jmobius)
 SilentMove: Prevents aggressive mobs from attacking you when entering aggression range.
 SkillEvasion: Skill evasion stat.
 SkillMastery: Activates double debuff or cooldown reset critical based on the specified stat.
 SkillMasteryRate: Bonus chance for skill mastery stat.
-SkillPowerAdd: Adds set ammount of power to skills. (l2j4team)
+SkillPowerAdd: Adds set ammount of power to skills. (l2jmobius)
 SkillTurning: Stops target's casting.
 SkillTurningOverTime: Stops target's casting at a fixed rate.
 SoulBlow: Physical attack based on blow formula with bonus damage from souls.
@@ -300,14 +301,14 @@ SoulEating: Absorbs souls when taking exp from mobs and sets max soul count.
 Sow: Planting a seed into NPC target. Manor stuff.
 Speed: Speed stat.
 SphericBarrier: Blocks damage and buff/debuff incoming from outside the specified range.
-SpeedLimit: Increase a character's max Speed limit. (l2j4team)
+SpeedLimit: Increase a character's max Speed limit. (l2jmobius)
 SpModify: Bonus SP stat.
 Spoil: Spoils a mob activating its extra sweep drop.
-StatAddForLevel: Adds a fixed amount of a Stat for a specific player level. (l2j4team)
+StatAddForLevel: Adds a fixed amount of a Stat for a specific player level. (l2jmobius)
 StatBonusSkillCritical: Changes skill critical rate to depend on the specified base stat.
 StatBonusSpeed: Changes Speed stat to depend on the specified base stat.
 StatByMoveType: Adds stat based on your movement type (standing, running, walking).
-StatMulForLevel: Multiplies a fixed amount of a Stat for a specific player level. (l2j4team)
+StatMulForLevel: Multiplies a fixed amount of a Stat for a specific player level. (l2jmobius)
 StatUp: Increases the specified base stat.
 StealAbnormal: Steals enemy's buffs.
 Summon: Summons a servitor.
@@ -331,7 +332,7 @@ TargetMe: Changes your enemy's target to you.
 TargetMeProbability: Changes your enemy's target to you with a given probability.
 Teleport: Teleports to a specified XYZ location.
 TeleportToNpc: Teleports to a specified Npc Id.
-TeleportToPlayer: Teleports to targeted player. (l2j4team)
+TeleportToPlayer: Teleports to targeted player. (l2jmobius)
 TeleportToSummon: Teleports to your summon.
 TeleportToTarget: Teleports to your target.
 TransferDamageToPlayer: Transfers portion of incoming damage from target to you.
@@ -340,12 +341,12 @@ TransferHate: Transfers Npc's hate from you to your target.
 Transformation: Transforms into the specified transformation id and gives its template skills.
 TrapDetect: Detects a hidden trap.
 TrapRemove: Removes a trap.
-TriggerSkill: Triggers a specified skill. (l2j4team)
+TriggerSkill: Triggers a specified skill. (l2jmobius)
 TriggerSkillByAttack: Triggers a specified skill when you deal damage.
 TriggerSkillByAvoid: Triggers a specified skill when you avoid autoattack damage.
 TriggerSkillByDamage: Triggers a specified skill when you receive damage.
 TriggerSkillByDeathBlow: Triggers a specified skill when you land a death blow (killing a creature).
-TriggerSkillByHpPercent: Triggers a specified skill based on effected HP percent. (l2j4team)
+TriggerSkillByHpPercent: Triggers a specified skill based on effected HP percent. (l2jmobius)
 TriggerSkillByKill: Triggers a specified skill when you kill a creature.
 TriggerSkillByMagicType: Triggers skill when you finish casting a skill with a specified magic type.
 TriggerSkillBySkillAttack: Triggers skill when you finish casting a skill that does damage.
@@ -358,7 +359,7 @@ UnsummonServitors: Unsummons target servitors.
 Untargetable: Becomes untargetable.
 VampiricAttack: Increases current HP when dealing damage.
 VampiricDefence: Resist stat towards VampiricAttack
-VitalityExpRate: Sets the vitality exp rate. (l2j4team)
+VitalityExpRate: Sets the vitality exp rate. (l2jmobius)
 VitalityPointsRate: Vitality points consume rate.
 VitalityPointUp: Increases vitality points.
 WeightLimit: Maximum weight stat.

@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,6 +37,7 @@ import org.l2j.gameserver.model.actor.Creature;
 import org.l2j.gameserver.model.actor.Npc;
 import org.l2j.gameserver.model.actor.Player;
 import org.l2j.gameserver.model.actor.Summon;
+import org.l2j.gameserver.model.actor.instance.Door;
 import org.l2j.gameserver.model.events.EventType;
 import org.l2j.gameserver.model.events.annotations.RegisterEvent;
 import org.l2j.gameserver.model.events.impl.creature.OnCreatureDeath;
@@ -64,7 +65,7 @@ import org.l2j.gameserver.util.Util;
 
 /**
  * Team vs Team event.
- * @author 4Team
+ * @author Mobius
  */
 public class TvT extends Event
 {
@@ -254,6 +255,8 @@ public class TvT extends Event
 				final InstanceManager manager = InstanceManager.getInstance();
 				final InstanceTemplate template = manager.getInstanceTemplate(INSTANCE_ID);
 				PVP_WORLD = manager.createInstance(template, null);
+				// Make sure doors are closed.
+				PVP_WORLD.getDoors().forEach(Door::closeMe);
 				// Randomize player list and separate teams.
 				final List<Player> playerList = new ArrayList<>(PLAYER_LIST.size());
 				playerList.addAll(PLAYER_LIST);

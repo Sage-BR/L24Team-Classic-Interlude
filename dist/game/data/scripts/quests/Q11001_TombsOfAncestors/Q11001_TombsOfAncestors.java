@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ public class Q11001_TombsOfAncestors extends Quest
 	// Rewards
 	private static final int SWORD_OF_SOLIDARITY = 49043;
 	private static final int WAND_OF_ADEPT = 49044;
-	private static final int RING_NOVICE = 29497;
+	private static final int RING_NOVICE = 49041;
 	private static final int NECKLACE_NOVICE = 49039;
 	// Monsters
 	private static final int WOLF = 20120;

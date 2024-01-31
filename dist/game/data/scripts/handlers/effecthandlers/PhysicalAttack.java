@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ import org.l2j.gameserver.model.stats.Stat;
  * Current formulas were tested to be the best matching retail, damage appears to be identical:<br>
  * For melee skills: 70 * graciaSkillBonus1.10113 * (patk * lvlmod + power) * crit * ss * skillpowerbonus / pdef<br>
  * For ranged skills: 70 * (patk * lvlmod + power + patk + power) * crit * ss * skillpower / pdef<br>
- * @author Nik, 4Team
+ * @author Nik, Mobius
  */
 public class PhysicalAttack extends AbstractEffect
 {

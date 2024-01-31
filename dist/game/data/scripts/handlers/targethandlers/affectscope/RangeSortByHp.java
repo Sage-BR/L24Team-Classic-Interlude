@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ import org.l2j.gameserver.model.skill.targets.AffectScope;
 
 /**
  * Range sorted by lowest to highest hp percent affect scope implementation.
- * @author Nik, 4Team
+ * @author Nik, Mobius
  */
 public class RangeSortByHp implements IAffectScopeHandler
 {
@@ -56,7 +56,12 @@ public class RangeSortByHp implements IAffectScopeHandler
 			}
 			
 			// Range skills appear to not affect you unless you are the main target.
-			if (((c == creature) && (target != creature)) || ((affectObject != null) && !affectObject.checkAffectedObject(creature, c)))
+			if ((c == creature) && (target != creature))
+			{
+				return false;
+			}
+			
+			if ((affectObject != null) && !affectObject.checkAffectedObject(creature, c))
 			{
 				return false;
 			}

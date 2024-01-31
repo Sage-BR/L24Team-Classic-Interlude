@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ import org.l2j.gameserver.model.skill.Skill;
 
 /**
  * Transformation type effect, which disables attack or use of skills.
- * @author Nik, 4Team
+ * @author Nik, Mobius
  */
 public class ChangeBody extends AbstractEffect
 {

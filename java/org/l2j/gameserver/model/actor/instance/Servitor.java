@@ -318,7 +318,6 @@ public class Servitor extends Summon implements Runnable
 						
 						// Do not store those effects.
 						
-						
 						// Do not save heals.
 						// Toggles are skipped, unless they are necessary to be always on.
 						if (skill.isDeleteAbnormalOnLeave() || (skill.getAbnormalType() == AbnormalType.LIFE_FORCE_OTHERS) || (skill.isToggle() && !skill.isNecessaryToggle()))
@@ -327,12 +326,7 @@ public class Servitor extends Summon implements Runnable
 						}
 						
 						// Dances and songs are not kept in retail.
-						if (skill.isDance() && !Config.ALT_STORE_DANCES)
-						{
-							continue;
-						}
-						
-						if (storedSkills.contains(skill.getReuseHashCode()))
+						if ((skill.isDance() && !Config.ALT_STORE_DANCES) || storedSkills.contains(skill.getReuseHashCode()))
 						{
 							continue;
 						}

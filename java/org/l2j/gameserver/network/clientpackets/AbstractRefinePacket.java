@@ -119,13 +119,8 @@ public abstract class AbstractRefinePacket implements ClientPacket
 			}
 		}
 		
-		if (!(item.getTemplate() instanceof Weapon) && !(item.getTemplate() instanceof Armor))
-		{
-			return false; // neither weapon nor armor ?
-		}
-		
 		// blacklist check
-		if (Arrays.binarySearch(Config.AUGMENTATION_BLACKLIST, item.getId()) >= 0)
+		if ((!(item.getTemplate() instanceof Weapon) && !(item.getTemplate() instanceof Armor)) || (Arrays.binarySearch(Config.AUGMENTATION_BLACKLIST, item.getId()) >= 0))
 		{
 			return false;
 		}

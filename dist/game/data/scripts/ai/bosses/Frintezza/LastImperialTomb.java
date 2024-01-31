@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ import instances.AbstractInstance;
 
 /**
  * Last Imperial Tomb AI
- * @author 4Team (reworked from L2J version)
+ * @author Mobius (reworked from L2J version)
  */
 public class LastImperialTomb extends AbstractInstance
 {

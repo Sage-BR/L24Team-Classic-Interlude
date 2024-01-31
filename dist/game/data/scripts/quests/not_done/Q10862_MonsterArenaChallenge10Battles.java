@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ import org.l2j.Config;
 import org.l2j.gameserver.model.quest.Quest;
 
 /**
- * @author 4Team
+ * @author Mobius
  */
 public class Q10862_MonsterArenaChallenge10Battles extends Quest
 {

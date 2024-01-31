@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ import org.l2j.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * Extractable Items handler.
- * @author HorridoJoho, 4Team
+ * @author HorridoJoho, Mobius
  */
 public class ExtractableItems implements IItemHandler
 {

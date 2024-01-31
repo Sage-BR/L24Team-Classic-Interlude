@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ import org.l2j.gameserver.network.serverpackets.SystemMessage;
  * Restoration Random effect implementation.<br>
  * This effect is present in item skills that "extract" new items upon usage.<br>
  * This effect has been unhardcoded in order to work on targets as well.
- * @author Zoey76, 4Team
+ * @author Zoey76, Mobius
  */
 public class RestorationRandom extends AbstractEffect
 {

@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -129,7 +129,8 @@ public enum Stat
 	SHIELD_DEFENCE_RATE("rShld", new ShieldDefenceRateFinalizer()),
 	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, 0, 1),
 	CRITICAL_RATE_SKILL("physicalSkillCriticalRate"),
-	MAX_MAGIC_CRITICAL_RATE("maxMagicCritRate"),
+	ADD_MAX_MAGIC_CRITICAL_RATE("addMaxMagicCritRate"),
+	ADD_MAX_PHYSICAL_CRITICAL_RATE("addMaxPhysicalCritRate"),
 	MAGIC_CRITICAL_RATE("mCritRate", new MCritRateFinalizer()),
 	BLOW_RATE("blowRate"),
 	BLOW_RATE_DEFENCE("blowRateDefence"),

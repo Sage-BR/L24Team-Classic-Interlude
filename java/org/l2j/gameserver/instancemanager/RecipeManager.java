@@ -207,8 +207,6 @@ public class RecipeManager
 				return;
 			}
 			
-			
-			
 			// validate recipe list
 			// validate skill level
 			if (_player.isProcessingTransaction() || (_recipeList.getRecipes().length == 0) || (_recipeList.getLevel() > _skillLevel))

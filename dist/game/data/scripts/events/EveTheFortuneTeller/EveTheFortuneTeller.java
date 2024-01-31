@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ import org.l2j.gameserver.network.serverpackets.luckygame.ExStartLuckyGame;
 /**
  * Eve the Fortune Teller Returns<br>
  * Info - http://www.lineage2.com/en/news/events/11182015-eve-the-fortune-teller-returns.php
- * @author 4Team
+ * @author Mobius
  */
 public class EveTheFortuneTeller extends LongTimeEvent
 {

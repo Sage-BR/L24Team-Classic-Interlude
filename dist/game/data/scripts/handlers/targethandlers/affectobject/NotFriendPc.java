@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,8 +44,13 @@ public class NotFriendPc implements IAffectObjectHandler
 		if (player != null)
 		{
 			// Same player.
+			if (player == targetPlayer)
+			{
+				return false;
+			}
+			
 			// Peace Zone.
-			if ((player == targetPlayer) || (target.isInsidePeaceZone(player) && !player.getAccessLevel().allowPeaceAttack()))
+			if (target.isInsidePeaceZone(player) && !player.getAccessLevel().allowPeaceAttack())
 			{
 				return false;
 			}

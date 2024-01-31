@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -56,7 +56,7 @@ public class RollingDice implements IItemHandler
 			return false;
 		}
 		
-		// 4Team: Retail dice position land calculation.
+		// Mobius: Retail dice position land calculation.
 		final double angle = Util.convertHeadingToDegree(player.getHeading());
 		final double radian = Math.toRadians(angle);
 		final double course = Math.toRadians(180);

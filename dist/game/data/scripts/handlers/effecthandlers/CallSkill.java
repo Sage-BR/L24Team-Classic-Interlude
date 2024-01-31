@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,6 +16,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2j.commons.threads.ThreadPool;
 import org.l2j.commons.util.Rnd;
 import org.l2j.gameserver.data.xml.SkillData;
 import org.l2j.gameserver.model.StatSet;
@@ -26,6 +27,7 @@ import org.l2j.gameserver.model.item.instance.Item;
 import org.l2j.gameserver.model.skill.BuffInfo;
 import org.l2j.gameserver.model.skill.Skill;
 import org.l2j.gameserver.model.skill.SkillCaster;
+import org.l2j.gameserver.network.serverpackets.MagicSkillUse;
 
 /**
  * Call Skill effect implementation.
@@ -58,10 +60,10 @@ public class CallSkill extends AbstractEffect
 			return;
 		}
 		
-		Skill triggerSkill = null;
+		final Skill triggerSkill;
 		if (_skillLevelScaleTo <= 0)
 		{
-			// 4Team: Use 0 to trigger max effector learned skill level.
+			// Mobius: Use 0 to trigger max effector learned skill level.
 			if (_skill.getSkillLevel() == 0)
 			{
 				final int knownLevel = effector.getSkillLevel(_skill.getSkillId());
@@ -72,6 +74,7 @@ public class CallSkill extends AbstractEffect
 				else
 				{
 					LOGGER.warning("Player " + effector + " called unknown skill " + _skill + " triggered by " + skill + " CallSkill.");
+					return;
 				}
 			}
 			else
@@ -100,7 +103,21 @@ public class CallSkill extends AbstractEffect
 				return;
 			}
 			
-			SkillCaster.triggerCast(effector, effected, triggerSkill);
+			final int hitTime = triggerSkill.getHitTime();
+			if (hitTime > 0)
+			{
+				if (effector.isSkillDisabled(triggerSkill))
+				{
+					return;
+				}
+				
+				effector.broadcastPacket(new MagicSkillUse(effector, effected, triggerSkill.getDisplayId(), triggerSkill.getLevel(), hitTime, 0));
+				ThreadPool.schedule(() -> SkillCaster.triggerCast(effector, effected, triggerSkill), hitTime);
+			}
+			else
+			{
+				SkillCaster.triggerCast(effector, effected, triggerSkill);
+			}
 		}
 		else
 		{

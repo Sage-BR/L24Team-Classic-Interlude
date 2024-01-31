@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,8 +47,17 @@ public class Enemy implements ITargetTypeHandler
 		final Creature target = (Creature) selectedTarget;
 		
 		// You cannot attack yourself even with force.
+		if (creature == target)
+		{
+			if (sendMessage)
+			{
+				creature.sendPacket(SystemMessageId.INVALID_TARGET);
+			}
+			return null;
+		}
+		
 		// You cannot attack dead targets.
-		if ((creature == target) || (target.isDead() && !skill.isStayAfterDeath()))
+		if (target.isDead() && !skill.isStayAfterDeath())
 		{
 			if (sendMessage)
 			{

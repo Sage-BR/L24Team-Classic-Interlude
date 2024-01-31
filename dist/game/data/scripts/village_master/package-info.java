@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,6 +19,6 @@
  * In particular, changing occupations, creating/disolving a clan,<br>
  * and many more options given by village masters often require additional checks.<br>
  * All such checks are implemented here.
- * @author 4Team
+ * @author Mobius
  */
 package village_master;

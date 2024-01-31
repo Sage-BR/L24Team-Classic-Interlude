@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,34 +16,46 @@
  */
 package handlers.playeractions;
 
+import org.l2j.gameserver.ai.CtrlIntention;
 import org.l2j.gameserver.handler.IPlayerActionHandler;
 import org.l2j.gameserver.model.ActionDataHolder;
+import org.l2j.gameserver.model.WorldObject;
 import org.l2j.gameserver.model.actor.Player;
 import org.l2j.gameserver.model.actor.Summon;
 import org.l2j.gameserver.network.SystemMessageId;
 
 /**
  * Servitor Attack player action handler.
- * @author St3eT
+ * @author Mobius
  */
 public class ServitorAttack implements IPlayerActionHandler
 {
 	@Override
 	public void useAction(Player player, ActionDataHolder data, boolean ctrlPressed, boolean shiftPressed)
 	{
-		if (player.hasServitors())
-		{
-			for (Summon summon : player.getServitors().values())
-			{
-				if (summon.canAttack(player.getTarget(), ctrlPressed))
-				{
-					summon.doAttack(player.getTarget());
-				}
-			}
-		}
-		else
+		if (!player.hasServitors())
 		{
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_A_SERVITOR);
+			return;
+		}
+		
+		final WorldObject target = player.getTarget();
+		if (target == null)
+		{
+			return;
+		}
+		
+		final boolean targetOutOfRange = player.calculateDistance3D(target) > 3000;
+		for (Summon summon : player.getServitors().values())
+		{
+			if (targetOutOfRange)
+			{
+				summon.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player);
+			}
+			else if (summon.canAttack(target, ctrlPressed))
+			{
+				summon.doAttack(target);
+			}
 		}
 	}
 }

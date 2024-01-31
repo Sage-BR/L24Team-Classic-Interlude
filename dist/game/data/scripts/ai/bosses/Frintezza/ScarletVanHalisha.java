@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ import org.l2j.gameserver.util.Util;
 import ai.AbstractNpcAI;
 
 /**
- * @author Micr0, Zerox, 4Team
+ * @author Micr0, Zerox, Mobius
  */
 public class ScarletVanHalisha extends AbstractNpcAI
 {

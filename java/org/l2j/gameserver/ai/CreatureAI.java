@@ -401,8 +401,6 @@ public class CreatureAI extends AbstractAI
 			return;
 		}
 		
-		
-		
 		// Dead actors can`t follow
 		// do not follow yourself
 		if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0) || _actor.isDead() || (_actor == target))

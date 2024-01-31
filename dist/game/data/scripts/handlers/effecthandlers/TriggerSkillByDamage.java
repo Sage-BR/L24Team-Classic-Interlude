@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -99,7 +99,12 @@ public class TriggerSkillByDamage extends AbstractEffect
 			return;
 		}
 		
-		if (((_chance < 100) && (Rnd.get(100) > _chance)) || ((_hpPercent < 100) && (event.getTarget().getCurrentHpPercent() > _hpPercent)))
+		if ((_chance < 100) && (Rnd.get(100) > _chance))
+		{
+			return;
+		}
+		
+		if ((_hpPercent < 100) && (event.getTarget().getCurrentHpPercent() > _hpPercent))
 		{
 			return;
 		}

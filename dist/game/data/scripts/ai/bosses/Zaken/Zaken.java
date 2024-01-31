@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ import ai.AbstractNpcAI;
  * Zaken AI<br>
  * TODO: Skill cast?<br>
  * TODO: Day/Night spawn? TODO: Boss message broadcast.
- * @author 4Team
+ * @author Mobius
  */
 public class Zaken extends AbstractNpcAI
 {

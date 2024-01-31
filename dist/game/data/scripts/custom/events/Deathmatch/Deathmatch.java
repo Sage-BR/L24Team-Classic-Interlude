@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -99,9 +99,9 @@ public class Deathmatch extends Event
 	private static final int WAIT_TIME = 20; // Seconds
 	private static final int FIGHT_TIME = 3; // Minutes
 	private static final int INACTIVITY_TIME = 2; // Minutes
-	private static final int MINIMUM_PARTICIPANT_LEVEL = 76;
+	private static final int MINIMUM_PARTICIPANT_LEVEL = 85;
 	private static final int MAXIMUM_PARTICIPANT_LEVEL = 200;
-	private static final int MINIMUM_PARTICIPANT_COUNT = 4;
+	private static final int MINIMUM_PARTICIPANT_COUNT = 2;
 	private static final int MAXIMUM_PARTICIPANT_COUNT = 24; // Scoreboard has 25 slots
 	private static final ItemHolder REWARD = new ItemHolder(57, 1000000); // Adena
 	// Misc

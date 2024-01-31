@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ import ai.AbstractNpcAI;
 
 /**
  * Core AI.
- * @author DrLecter, Emperorc, 4Team
+ * @author DrLecter, Emperorc, Mobius
  */
 public class Core extends AbstractNpcAI
 {

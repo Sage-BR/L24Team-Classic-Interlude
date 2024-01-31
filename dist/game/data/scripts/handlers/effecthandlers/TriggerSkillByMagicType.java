@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -87,7 +87,12 @@ public class TriggerSkillByMagicType extends AbstractEffect
 		}
 		
 		final Skill eventSkill = event.getSkill();
-		if (!CommonUtil.contains(_magicTypes, eventSkill.getMagicType()) || ((_chance < 100) && (Rnd.get(100) > _chance)))
+		if (!CommonUtil.contains(_magicTypes, eventSkill.getMagicType()))
+		{
+			return;
+		}
+		
+		if ((_chance < 100) && (Rnd.get(100) > _chance))
 		{
 			return;
 		}

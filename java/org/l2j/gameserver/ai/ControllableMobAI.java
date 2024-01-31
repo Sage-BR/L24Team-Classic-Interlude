@@ -390,13 +390,8 @@ public class ControllableMobAI extends AttackableAI
 		}
 		
 		// Spawn protection (only against mobs)
-		if (target.isPlayer() && ((Player) target).isSpawnProtected())
-		{
-			return false;
-		}
-		
 		// Check if the target is a Playable and if the target isn't in silent move mode
-		if (target.isPlayable() && ((Playable) target).isSilentMovingAffected())
+		if ((target.isPlayer() && ((Player) target).isSpawnProtected()) || (target.isPlayable() && ((Playable) target).isSilentMovingAffected()))
 		{
 			return false;
 		}

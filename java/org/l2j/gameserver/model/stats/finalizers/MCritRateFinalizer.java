@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,18 @@ public class MCritRateFinalizer implements IStatFunction
 		}
 		
 		final double witBonus = creature.getWIT() > 0 ? BaseStat.WIT.calcBonus(creature) : 1;
-		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue * witBonus * 10), 0, creature.isPlayable() ? creature.getStat().getValue(Stat.MAX_MAGIC_CRITICAL_RATE, Config.MAX_MCRIT_RATE) : Double.MAX_VALUE);
+		
+		final double maxMagicalCritRate;
+		if (creature.isPlayable())
+		{
+			maxMagicalCritRate = Config.MAX_MCRIT_RATE + creature.getStat().getValue(Stat.ADD_MAX_MAGIC_CRITICAL_RATE, 0);
+		}
+		else
+		{
+			maxMagicalCritRate = Double.MAX_VALUE;
+		}
+		
+		return validateValue(creature, Stat.defaultValue(creature, stat, baseValue * witBonus * 10), 0, maxMagicalCritRate);
 	}
 	
 	@Override

@@ -1,5 +1,5 @@
 /*
- * This file is part of the L2J 4Team project.
+ * This file is part of the L2J Mobius project.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ import org.l2j.gameserver.network.serverpackets.PetItemList;
 
 /**
  * Restoration effect implementation.
- * @author Zoey76, 4Team
+ * @author Zoey76, Mobius
  */
 public class Restoration extends AbstractEffect
 {
